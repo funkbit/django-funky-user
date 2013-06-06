@@ -1,0 +1,61 @@
+{% extends "accounts/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Edit your account" %}{% endblock %}
+
+{% block content %}
+
+    <h2>
+        {% trans "Edit your account" %}
+    </h2>
+
+    <form method="post" action="." class="form-horizontal">
+
+        {% csrf_token %}
+        
+        {% for field in form %}
+            {% if field.is_hidden %}
+                {{ field }}
+            {% else %}
+                <div class="control-group{% if field.errors %} error{% endif %}{% if field.field.required %} required{% endif %}">
+                    <label class="control-label" for="id_{{ field.name }}">{{ field.label }}</label>
+                    
+                    <div class="controls">
+                        {{ field }}
+                        
+                        {% if field.errors %}
+                            <span class="help-inline">
+                                {{ field.errors|join:", " }}
+                            </span>
+                        {% endif %}
+                        
+                        {% if field.help_text %}
+                            <p class="help-block">
+                                {{ field.help_text }}
+                            </p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+
+        {% endfor %}
+        
+        <div class="control-group">
+            <label class="control-label">Password</label>
+            
+            <div class="controls">
+                <p>
+                    <a href="{% url 'user-password-change' %}">{% trans 'Change your password' %}</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <p>
+                <input type="submit" class="btn btn-primary" value="{% trans 'Save' %}">
+            </p>
+        </div>
+
+    </form>
+
+{% endblock %}

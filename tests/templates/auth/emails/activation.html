@@ -1,0 +1,19 @@
+{% extends BASE_TEMPLATE_HTML_EMAIL %}
+{% load i18n %}
+
+{% block content %}
+
+	<h1>
+		<b>{% blocktrans with site_name=site.name %}Welcome to {{ site_name }}!{% endblocktrans %}</b>
+	</h1>
+	
+	<p>
+		{% blocktrans with site_name=site.name %}You have registered an account at {{ site_name }}, and the last step is to verify your email address.{% endblocktrans %}
+	</p>
+	
+	<p>
+		<b>{% blocktrans %}To activate your account, please click the following link:{% endblocktrans %}</b><br>
+		<a href="{{ protocol }}://{{ site.domain }}{{ activation_url }}">{{ site.domain }}{{ activation_url }}</a>
+	</p>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% load i18n %}<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" bgcolor="#FFFFFF" style="width: 100% !important; -webkit-text-size-adjust: 100% !important; -ms-text-size-adjust: 100% !important;">
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+        <p>
+            {% blocktrans with site_name=site.name %}The {{ site_name }} team{% endblocktrans %}
+        </p>
+    {% endblock %}
+
+</body>
+</html>

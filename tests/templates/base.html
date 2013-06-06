@@ -1,0 +1,25 @@
+{% load i18n %}<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Hello{% endblock %}</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <style>
+        body {
+            color: #010101;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        .content {
+            margin: 0 auto;
+            padding: 2%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

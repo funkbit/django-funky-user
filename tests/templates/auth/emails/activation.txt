@@ -1,0 +1,12 @@
+{% extends BASE_TEMPLATE_TEXT_EMAIL %}
+{% load i18n %}
+
+{% block content %}{% blocktrans with site_name=site.name %}Welcome to {{ site_name }}!{% endblocktrans %}
+
+{% blocktrans with site_name=site.name %}You have registered an account at {{ site_name }}, and the last step is to verify your email address.{% endblocktrans %}
+
+{% blocktrans %}To activate your account, please click the following link:{% endblocktrans %}
+
+{{ protocol }}://{{ site.domain }}{{ activation_url }}
+
+{% endblock %}

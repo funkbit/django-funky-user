@@ -1,0 +1,4 @@
+{% load i18n %}{% block content %}{% endblock %}
+{% block footer %}
+{% blocktrans with site_name=site.name %}The {{ site_name }} team{% endblocktrans %}
+{% endblock %}
