@@ -9,8 +9,8 @@ Django Funky User is a Django application with various functionality
 to replace the built-in Django User model. It is compatible with Django 1.5 and
 above.
 
-The intention of the project is to be able to easily use (long) email addresses
-as usernames, have the reset password view send HTML email and fix other minor
+The intention of the project is to utilize (long) email addresses as 
+usernames, have the reset password view send HTML email and fix other minor
 annoyances with Django's otherwise brilliant auth built-in package.
 
 It also includes a sensible user registration/activation process and is very
@@ -83,7 +83,7 @@ Remember to run the `syncdb` management command to create the database table.
 
 ## Usage and customizations
 
-See example usage of customizations in the example/demo_project/accounts
+See example usage of customizations in the `example/demo_project/accounts`
 directory.
 
 
