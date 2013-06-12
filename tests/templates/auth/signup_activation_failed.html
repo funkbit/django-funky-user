@@ -1,17 +1,17 @@
-{% extends "auth/base.html" %}
+{% extends 'auth/base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans "Activation failed" %}{% endblock %}
+{% block title %}{% trans 'Activation failed' %}{% endblock %}
 
 
 {% block content %}
 
     <h2>
-        {% trans "Activation failed" %}
+        {% trans 'Activation failed' %}
     </h2>
-    
+
     <p class="alert alert-warning">
         {% blocktrans %}Sorry, it looks like the activation link is invalid.{% endblocktrans %}
     </p>
-    
+
 {% endblock %}

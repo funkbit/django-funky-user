@@ -1,38 +1,38 @@
-{% extends "auth/base.html" %}
+{% extends 'auth/base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans "Log in" %}{% endblock %}
+{% block title %}{% trans 'Log in' %}{% endblock %}
 
 {% block content %}
-	
+
 	<h2>
-		{% trans "Log in" %}
+		{% trans 'Log in' %}
 	</h2>
 
 	{% if user.is_authenticated %}
 
 		<p class="alert alert-info">
-			{% blocktrans with user.get_full_name as name %}You are already logged in as {{ name }}.{% endblocktrans %}
-			<a href="{% url "user-logout" %}">{% trans "Log out?" %}</a>
+			{% blocktrans with name=user.get_full_name %}You are already logged in as {{ name }}.{% endblocktrans %}
+			<a href="{% url 'user-logout' %}">{% trans 'Log out?' %}</a>
 		</p>
 
 	{% else %}
 
 		<form action="." method="post" class="form-horizontal">
-			
+
 			{% csrf_token %}
 			<input type="hidden" name="next" value="{{ next }}">
-			
+
 			{% if form.errors %}
 				<p class="alert alert-error">
 					{% blocktrans %}Please enter a correct username and password. Note that both fields are case-sensitive.{% endblocktrans %}
 				</p>
 			{% endif %}
-			
+
 			{% for field in form %}
-				{% include "auth/includes/form_field.html" %}
+				{% include 'auth/includes/form_field.html' %}
 			{% endfor %}
-			
+
 			<div class="form-actions">
 				<p>
 					<input type="submit" class="btn btn-primary" value="{% trans 'Log in' %}">
@@ -42,12 +42,12 @@
 				<p>
 					{% url "user-signup" as signup_url %}
 					{% blocktrans %}Don't have an account? <a href="{{ signup_url }}">Signup!</a>{% endblocktrans %}<br>
-					<a href="{% url "user-password-reset" %}">{% trans 'Forgotten your password?' %}</a>
+					<a href="{% url 'user-password-reset' %}">{% trans 'Forgotten your password?' %}</a>
 				</p>
 			</div>
 
 		</form>
 
 	{% endif %}
-	
+
 {% endblock %}

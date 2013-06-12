@@ -12,22 +12,22 @@
 	<form action="." method="post" class="form-horizontal">
 
 		{% csrf_token %}
-		
+
 		{% for field in form %}
-			{% include "auth/includes/form_field.html" %}
+			{% include 'auth/includes/form_field.html' %}
 		{% endfor %}
-		
+
 		<div class="form-actions">
 			<p>
 				<input type="submit" class="btn btn-primary" value="{% trans 'Register' %}">
 			</p>
-			
+
 			<p>
-				{% url "user-login" as login_url %}
+				{% url 'user-login' as login_url %}
 				{% blocktrans %}Already have an account? <a href="{{ login_url }}">Log in!</a>{% endblocktrans %}
 			</p>
 		</div>
 
 	</form>
-	
+
 {% endblock %}

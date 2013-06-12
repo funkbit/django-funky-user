@@ -1,20 +1,20 @@
-{% extends "auth/base.html" %}
+{% extends 'auth/base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans "Logged out" %}{% endblock %}
+{% block title %}{% trans 'Logged out' %}{% endblock %}
 
 {% block content %}
 
-	<h2>
-        {% trans "Logged out" %}
+    <h2>
+        {% trans 'Logged out' %}
     </h2>
 
-	<p class="lead">
-        {% trans "Thanks for spending some quality time with the Web site today." %}
+    <p class="lead">
+        {% trans 'Thanks for spending some quality time with the Web site today.' %}
     </p>
-	
-	<p>
-        <a href="{% url "user-login" %}">{% trans 'Log in again' %}</a>
+
+    <p>
+        <a href="{% url 'user-login' %}">{% trans 'Log in again' %}</a>
     </p>
 
 {% endblock %}

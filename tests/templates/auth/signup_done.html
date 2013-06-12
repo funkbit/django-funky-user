@@ -1,16 +1,16 @@
-{% extends "auth/base.html" %}
+{% extends 'auth/base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans "Signup complete" %}{% endblock %}
+{% block title %}{% trans 'Signup complete' %}{% endblock %}
 
 {% block content %}
 
-	<h2>
-		{% trans "Signup complete" %}
-	</h2>
-	
-	<p class="lead">
-	   {% blocktrans %}Thanks for signing up! We've sent you an activation email with further instructions. Looking forward to seeing you soon!{% endblocktrans %}
-	</p>
-    
+    <h2>
+        {% trans 'Signup complete' %}
+    </h2>
+
+    <p class="lead">
+       {% blocktrans %}Thanks for signing up! We've sent you an activation email with further instructions. Looking forward to seeing you soon!{% endblocktrans %}
+    </p>
+
 {% endblock %}
